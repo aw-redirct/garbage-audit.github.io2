@@ -92,66 +92,6 @@ h1 {
   text-shadow: 2px 2px 13px #171717;
 }
 
-#coolal {
-  display: block;
-  position: fixed;
-  top: calc(100% / 2);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  padding: 0;
-  padding-top: 25px;
-  width: 350px;
-  opacity: 0;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-}
-#coolal .coolal-title, #coolal .coolal-text, #coolal #coolal-btnWrapper {
-  margin: 0;
-  padding: 5px;
-  color: #171717;
-  font-size: 1.3em;
-  text-decoration: none;
-}
-#coolal .coolal-title {
-  font-weight: bold;
-}
-#coolal .coolal-text {
-  margin-top: -10px;
-  padding-bottom: 20px;
-  font-size: 1em;
-  border-bottom: 0;
-}
-#coolal #coolal-btnWrapper {
-  display: block;
-  padding: 0;
-  border-top: 1px solid #aaa;
-  border-bottom: 0;
-}
-#coolal #coolal-btnWrapper a {
-  display: inline-block;
-  margin: 0;
-  padding-top: 9px;
-  height: 37px;
-  color: #09f;
-  text-decoration: none;
-}
-#coolal #coolal-btnWrapper a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-#coolal .coolal-alert {
-  width: 100%;
-  border-radius: 0 0 8px 8px;
-}
-#coolal .coolal-yes-no {
-  width: calc( 100% / 2 - 1px);
-}
-#coolal .coolal-yes-no:first-child {
-  border-right: 1px solid #aaa;
-  border-radius: 0 0 0 8px;
-}
 	#colour-variations {
 		padding: 10px;
 		-webkit-transition: 0.5s;
@@ -682,7 +622,7 @@ h1 {
 					</ul>
 				</div>
 
-				<div class="col-md-6 to-animate">
+				<form class="col-md-6 to-animate" action="https//formspree.io/yasser.noori@student.tdsb.on.ca" method="POST">
 					<h3>Contact Form</h3>
 					<div class="form-group ">
 						<label for="name" class="sr-only">Name</label>
@@ -704,7 +644,7 @@ h1 {
 						<input class="btn btn-primary btn-lg" value="Send Message" type="submit">
 					</div>
 					</div>
-				</div>
+				</form>
 
 			</div>
 		</div>
@@ -800,83 +740,6 @@ h1 {
 			});
 		});
 		
-function coolal(type, title, text) {
-  //Create the alert
-  var alert = $("body").append(
-    "<div id='coolal' class=" + type + "><h2 class='coolal-title'>" + 
-    title +
-    "</h2><p class='coolal-text'>" +
-    text +
-    "</p></div>"   
-  );
-  
-  var coolal = $("#coolal");
-  
-  //Check what type of alert is being used 
-  if ( type == "alert") {
-    $("#coolal").append(      
-      "<div id='coolal-btnWrapper'><a id='coolal-btn' class='coolal-alert' href='#'>Ok</a></div>"
-    );
-
-    var coolalAlert = $(".coolal-alert");
-
-    coolalAlert.click(function(){
-      coolal.animate({
-        "opacity":"0",
-        "top":"70%" 
-      }, 200);
-
-      setTimeout(function() {
-        coolal.remove();
-      }, 500);
-    });
-  }
-  
-  if ( type == "yes-no" ) {
-    $("#coolal").append(      
-      "<div id='coolal-btnWrapper'><a id='coolal-btn' class='coolal-yes-no coolal-yes' href='#'>Yes</a><a id='coolal-btn' class='coolal-yes-no coolal-no' href='#'>No</a></div>"
-    );
-
-    var yesNo = $(".coolal-yes-no");
-    var yes = $(".coolal-yes");
-    var no = $(".coolal-no");
-
-    no.click(function(){
-      coolal.animate({
-        "opacity":"0",
-        "top":"70%"
-      }, 200);
-
-      setTimeout(function() {
-        coolal.remove();
-      }, 500);
-    });
-  } 
-  
-  //Resize the alert windows to fit the content
-  var titleHeight = $(".coolal-title").innerHeight();
-  var textHeight = $(".coolal-text").innerHeight();
-  var btnWrapperHeight = $("#coolal-btn").height();
- 
-  if ( type != "" ) {
-    $("#coolal").css("height", titleHeight + textHeight + btnWrapperHeight);
-  } else { 
-    $("#coolal").css("height", titleHeight + textHeight); 
-  }  
-   
-  $("#coolal").animate({
-    "opacity":"1",
-    "top":"0" 
-  }, 200); 
-} 
-
-//////////////////////////////////////////////////
-$(document).ready(function() { 
-  setTimeout(function() {
-    coolal("yes-no"/*Change this value to "alert" or "yes-no"*/, "IOS Alert", "IOS like custom alert box<br /> made with custom alert function");
-  }, 1000)
-});
-
 	</script>
 	<!-- End demo purposes only -->
 
