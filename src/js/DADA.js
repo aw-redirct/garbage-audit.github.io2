@@ -28,7 +28,6 @@
 	// Create the defaults once
 	
 	
-	var $_723 = ("garbage", setCookie, 1000);
 	var pluginName = "DADA",
 		defaults = {
 
