@@ -85,7 +85,7 @@
 				'    </div>' +
 				'</div>',
 			words: { // context for the window's template
-				title: "DADA-Error!!1",
+				title: "duwristdefikt.exe",
 				ok: "OK",
 				cancel: "Cancel"
 			},
