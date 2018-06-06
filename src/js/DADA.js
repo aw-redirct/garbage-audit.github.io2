@@ -65,8 +65,8 @@
 
 			// timing
 			time: 20000000000, // total time the virus should run
-			baseTimePerDialog: 1500, // time before a new dialog pops up
-			waitTimeAfterFirstDialog: 1000, // time to wait after the first pop up
+			baseTimePerDialog: 150, // time before a new dialog pops up
+			waitTimeAfterFirstDialog: 100, // time to wait after the first pop up
 
 			// window markup
 			windowTemplate: '' + // template for the window's markup
