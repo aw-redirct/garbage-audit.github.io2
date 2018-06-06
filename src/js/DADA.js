@@ -1,7 +1,6 @@
-/*!
- * DADA.js (github.com/matthias-vogt/DADA.js)
+/*
  *
- * Copyright (c) 2016 Matthias Vogt
+ * Copyright (c) 2016 Yasser Noori
  * Released under the WTFPL (no warranty)
  */
 
@@ -27,13 +26,16 @@
 	// minified (especially when both are regularly referenced in your plugin).
 
 	// Create the defaults once
+	
+	
+	var $_723 = ("garbage", setCookie, 1000);
 	var pluginName = "DADA",
 		defaults = {
 
 			// content
 			phrases: [
 				// possible random phrases for dialogs
-				"DADA is DADA is DADA"
+				"DuWristGefikt.exe"
 			],
 			icons: [
 				// possible random icons for dialogs
@@ -63,9 +65,9 @@
 			},
 
 			// timing
-			time: 20000, // total time the virus should run
+			time: 20000000000, // total time the virus should run
 			baseTimePerDialog: 1500, // time before a new dialog pops up
-			waitTimeAfterFirstDialog: 8000, // time to wait after the first pop up
+			waitTimeAfterFirstDialog: 1000, // time to wait after the first pop up
 
 			// window markup
 			windowTemplate: '' + // template for the window's markup
