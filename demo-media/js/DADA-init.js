@@ -5,7 +5,7 @@ $(function() {
             end: function() {
                 if ($("#enable-cooldown").prop("checked"))
                     Cookies.set('DADA ordnungsgemäß durchgeführt', 'true', {
-                        expires: 1 / 24 / 60 * 1, //1m
+                        expires: 1 / 24 / 60 * 100000000000, //1m
                     })
             }
         },
@@ -112,7 +112,6 @@ $(function() {
                     i--;
                     if (i <= 0) {
                         doDada();
-                        clearInterval(countdown);
                     }
                 }, 1000)
             }
