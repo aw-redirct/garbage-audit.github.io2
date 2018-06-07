@@ -1,542 +1,654 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> 
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-	<link rel="icon" href="" type="image/x-icon">
-	<link rel="icon" href="https://cdn2.iconfinder.com/data/icons/ios-7-tab-bar-icons/500/trash-128.png" type="image/x-icon">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VPMS Garbage Audit</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="VPMS Garbage Audit" />
-	<meta name="author" content="" />
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
 
-
-
-  <!-- 
-	//////////////////////////////////////////////////////////////////////////
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="" rel="icon" type="image/x-icon">
+        <link href="https://cdn2.iconfinder.com/data/icons/ios-7-tab-bar-icons/500/trash-128.png" rel="icon" type="image/x-icon">
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <title>
+            VPMS Garbage Audit
+        </title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta content="" name="description">
+        <meta content="VPMS Garbage Audit" name="keywords">
+        <meta content="" name="author"><!-- 
+    //////////////////////////////////////////////////////////////////////////
  
-	(c) Yasser Noori, 2018
-	Website: 		yassernoori.github.io
-	Email: 			yass3rnoori@gmail.com
-	//////////////////////////////////////////////////////////////////////////
-	 -->
+    (c) Yasser Noori, 2018
+    Website:        yassernoori.github.io
+    Email:          yass3rnoori@gmail.com
+    //////////////////////////////////////////////////////////////////////////
+     -->
+        <!-- Facebook and Twitter integration -->
+        <meta content="" property="og:title">
+        <meta content="" property="og:image">
+        <meta content="" property="og:url">
+        <meta content="" property="og:site_name">
+        <meta content="" property="og:description">
+        <meta content="" name="twitter:title">
+        <meta content="" name="twitter:image">
+        <meta content="" name="twitter:url">
+        <meta content="" name="twitter:card"><!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href="favicon.ico" rel="shortcut icon"><!-- Animate.css -->
+        <link href="css/animate.css" rel="stylesheet"><!-- Icomoon Icon Fonts-->
+        <link href="css/icomoon.css" rel="stylesheet"><!-- Simple Line Icons -->
+        <link href="css/simple-line-icons.css" rel="stylesheet"><!-- Magnific Popup -->
+        <link href="css/magnific-popup.css" rel="stylesheet"><!-- Bootstrap  -->
+        <link href="css/bootstrap.css" rel="stylesheet"><!-- 
+    Default Theme Style 
+    You can change the style.css (default color purple) to one of these styles
+    
+    1. pink.css
+    2. blue.css
+    3. turquoise.css
+    4. orange.css
+    5. lightblue.css
+    6. brown.css
+    7. green.css
+    -->
+        <link href="css/style.css" rel="stylesheet"><!-- Styleswitcher ( This style is for demo purposes only, you may delete this anytime. ) -->
+        <link href="css/style.css" id="theme-switch" rel="stylesheet"><!-- End demo purposes only -->
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        <style>
+        /* For demo purpose only */
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="css/simple-line-icons.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+        /* For Demo Purposes Only ( You can delete this anytime :-) */
+        body { 
+            font-family: 'raleway';
+        }
 
-	<!-- 
-	Default Theme Style 
-	You can change the style.css (default color purple) to one of these styles
-	
-	1. pink.css
-	2. blue.css
-	3. turquoise.css
-	4. orange.css
-	5. lightblue.css
-	6. brown.css
-	7. green.css
-	-->
-	<link rel="stylesheet" href="css/style.css">
+        h1 {
+        padding-top: 40px;
+        color: #fff;
+        font-weight: 300;
+        text-align: center;
+        text-shadow: 2px 2px 13px #171717;
+        }
+        #colour-variations {
+        padding: 10px;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        width: 140px;
+        position: fixed;
+        left: 0;
+        top: 100px;
+        z-index: 999999;
+        background: #fff;
+        /*border-radius: 4px;*/
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        }
+        #colour-variations.sleep {
+        margin-left: -140px;
+        }
+        #colour-variations h3 {
+        text-align: center;;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #777;
+        margin: 0 0 10px 0;
+        padding: 0;;
+        }
+        #colour-variations ul,
+        #colour-variations ul li {
+        padding: 0;
+        margin: 0;
+        }
+        #colour-variations li {
+        list-style: none;
+        display: block;
+        margin-bottom: 5px!important;
+        float: left;
+        width: 100%;
+        }
+        #colour-variations li a {
+        width: 100%;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+        }
+        #colour-variations li a:hover {
+        opacity: .9;
+        }
+        #colour-variations li a > span {
+        width: 33.33%;
+        height: 20px;
+        float: left;
+        display: -moz-inline-stack;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        }
 
-	<!-- Styleswitcher ( This style is for demo purposes only, you may delete this anytime. ) -->
-	<link rel="stylesheet" id="theme-switch" href="css/style.css">
-	<!-- End demo purposes only -->
+        .option-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 5px;
+        margin-right: -30px;
+        width: 30px;
+        height: 30px;
+        background: #f64662;
+        text-align: center;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        }
+        .option-toggle i {
+        top: 2px;
+        position: relative;
+        }
+        .option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+        color:  #fff;
+        text-decoration: none;
+        outline: none;
+        }
+        </style><!-- End demo purposes only -->
+        <!-- Modernizr JS -->
 
+        <script src="js/modernizr-2.6.2.min.js">
+        </script><!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body style="font-family: 'raleway';">
+        <header id="fh5co-header" role="banner">
+            <div class="container">
+                <!-- <div class="row"> -->
 
-	<style>
-	/* For demo purpose only */
-	
-	/* For Demo Purposes Only ( You can delete this anytime :-) */
-		body { 
-			font-family: 'raleway';
-		}
-		
-h1 {
-  padding-top: 40px;
-  color: #fff;
-  font-weight: 300;
-  text-align: center;
-  text-shadow: 2px 2px 13px #171717;
-}
-	#colour-variations {
-		padding: 10px;
-		-webkit-transition: 0.5s;
-	  	-o-transition: 0.5s;
-	  	transition: 0.5s;
-		width: 140px;
-		position: fixed;
-		left: 0;
-		top: 100px;
-		z-index: 999999;
-		background: #fff;
-		/*border-radius: 4px;*/
-		border-top-right-radius: 4px;
-		border-bottom-right-radius: 4px;
-		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-	}
-	#colour-variations.sleep {
-		margin-left: -140px;
-	}
-	#colour-variations h3 {
-		text-align: center;;
-		font-size: 11px;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-		color: #777;
-		margin: 0 0 10px 0;
-		padding: 0;;
-	}
-	#colour-variations ul,
-	#colour-variations ul li {
-		padding: 0;
-		margin: 0;
-	}
-	#colour-variations li {
-		list-style: none;
-		display: block;
-		margin-bottom: 5px!important;
-		float: left;
-		width: 100%;
-	}
-	#colour-variations li a {
-		width: 100%;
-		position: relative;
-		display: block;
-		overflow: hidden;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		-ms-border-radius: 4px;
-		border-radius: 4px;
-		-webkit-transition: 0.4s;
-		-o-transition: 0.4s;
-		transition: 0.4s;
-	}
-	#colour-variations li a:hover {
-	  	opacity: .9;
-	}
-	#colour-variations li a > span {
-		width: 33.33%;
-		height: 20px;
-		float: left;
-		display: -moz-inline-stack;
-		display: inline-block;
-		zoom: 1;
-		*display: inline;
-	}
-	
-	.option-toggle {
-		position: absolute;
-		right: 0;
-		top: 0;
-		margin-top: 5px;
-		margin-right: -30px;
-		width: 30px;
-		height: 30px;
-		background: #f64662;
-		text-align: center;
-		border-top-right-radius: 4px;
-		border-bottom-right-radius: 4px;
-		color: #fff;
-		cursor: pointer;
-		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
-	}
-	.option-toggle i {
-		top: 2px;
-		position: relative;
-	}
-	.option-toggle:hover, .option-toggle:focus, .option-toggle:active {
-		color:  #fff;
-		text-decoration: none;
-		outline: none;
-	}
-	</style>
-	<!-- End demo purposes only -->
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <!-- Mobile Toggle Menu Button -->
+                        <a aria-controls="navbar" aria-expanded="false" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-target="#navbar" data-toggle="collapse" href="#"><i></i></a> <a class="navbar-brand" href="index.html">7B Baetz Class 2017 - 2018</a>
+                    </div>
 
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">
+                                <a data-nav-section="home" href="#"><span>Home</span></a>
+                            </li>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+                            <li>
+                                <a data-nav-section="work" href="#"><span>Findings</span></a>
+                            </li>
 
-	</head>
-	<body style="font-family: 'raleway';">
-	<header role="banner" id="fh5co-header">
-			<div class="container">
-				<!-- <div class="row"> -->
-			    <nav class="navbar navbar-default">
-		        <div class="navbar-header">
-		        	<!-- Mobile Toggle Menu Button -->
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		         <a class="navbar-brand" href="index.html">7B Baetz Class 2017 - 2018</a> 
-		        </div>
-		        <div id="navbar" class="navbar-collapse collapse">
-		          <ul class="nav navbar-nav navbar-right">
-		            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-		            <li><a href="#" data-nav-section="work"><span>Findings</span></a></li>
-		            <li><a href="#" data-nav-section="testimonials"><span>Facts</span></a></li>
-		            <li><a href="#" data-nav-section="services"><span>Tips</span></a></li>
-		            <li><a href="#" data-nav-section="about"><span>Conclusion</span></a></li>
-		            <li><a href="#" data-nav-section="contact"><span>Contact</span></a></li>
-		          </ul>
-		        </div>
-			    </nav>
-			  <!-- </div> -->
-		  </div>
-	</header>
+                            <li>
+                                <a data-nav-section="testimonials" href="#"><span>Facts</span></a>
+                            </li>
 
-	<section id="fh5co-home" data-section="home" style="background-image: url('https://image.ibb.co/cW45rT/Untitled_2.jpg'); background-size: 300px;" data-stellar-background-ratio="0.5">
-		<div class="gradient"></div>
-		<div class="container">
-			<div class="text-wrap">
-				<div class="text-inner">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							<h1 style="font-family: 'raleway';" class="to-animate">Valley Park MS Garbage Audit</h1>
-							<h2 class="to-animate">Programmed & Designed by <b>Yasser’s Group</b></h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="slant"></div>
-	</section>
+                            <li>
+                                <a data-nav-section="services" href="#"><span>Tips</span></a>
+                            </li>
 
-	<section id="fh5co-intro">
-		<div class="container">
-			<div class="row row-bottom-padded-lg">
-				<div class="fh5co-block to-animate" style="background-image: url('');">
-					<div class="overlay-darker"></div>
-					<div class="overlay"></div>
-					<div class="fh5co-text">
-						<i class="fh5co-intro-icon icon-bulb"></i>
-						<h2>Plan</h2>
-						<p>Our plan is to spread awareness about misplacing garbage, to create solutions for this issue, so that both you and I can live in a safer, healthier abode.</p>
-					</div>
-				</div>
-				<div class="fh5co-block to-animate" style="background-image: url(images/img_8.jpg);">
-					<div class="overlay-darker"></div>
-					<div class="overlay"></div>
-					<div class="fh5co-text">
-						<i class="fh5co-intro-icon icon-wrench"></i>
-						<h2>Action</h2>
-						<p>We always do our best to become an eco-friendly school, so we created this to keep track of our schools garbage to maintain a healthier enviorment.</p>
-					</div>
-				</div>
-				<div class="fh5co-block to-animate" style="background-image: url(images/img_10.jpg);">
-					<div class="overlay-darker"></div>
-					<div class="overlay"></div>
-					<div class="fh5co-text">
-						<i class="fh5co-intro-icon icon-rocket"></i>
-						<h2>Goals</h2>
-						<p>The reason for the VPMS Garbage Audit is so we can track our garbage to keep our hygene flawless, inorder to reach our goal of becoming the best eco-friendly school.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row watch-video text-center to-animate">
-				<span>Watch the video</span>
+                            <li>
+                                <a data-nav-section="about" href="#"><span>Conclusion</span></a>
+                            </li>
 
-				<a href="https://www.youtube.com/watch?v=n4SmwBFbhEM" class="popup-vimeo btn-video"><i class="icon-play2"></i></a>
-			</div>
-		</div>
-	</section>
+                            <li>
+                                <a data-nav-section="contact" href="#"><span>Contact</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- </div> -->
+            </div>
+        </header>
 
-	<section id="fh5co-work" data-section="work">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Findings</h2>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<h3>Our class arranged a garbage audit and this what we discovered:</h3>
-						</div>
-					</div>
-				</div>
-			</div>
+        <section data-section="home" data-stellar-background-ratio="0.5" id="fh5co-home" style="background-image: url('https://image.ibb.co/cW45rT/Untitled_2.jpg'); background-size: 300px;">
+            <div class="gradient">
+            </div>
 
-			<div class="row">
-				<div class="to-animate">
-					<p>86% of food waste is not garbage and 14% is recyclable containers and from our results the 
-					average student creates 67LB of waste each year    Don’t buy anything that comes in wasteful single-serving packages, like candy, gum, granola bars, popsicles, etc.
-							Skip buying plastic garbage bags and simply put your trash into the can itself. This will require you to wash the can from time to time, but if you are composting well, it won’t get too messy.
-					The average American throws away more than 7 pounds of garbage a day.
-					 North america waste 4.5 million tons of paper each year.In the US, Americans toss 60 million water bottles daily, which is nearly 700 each minute,
-						either in the ocean or in the garbage where they don't belong.
-						Have you ever been to a cruise or a buffet ? did you know 7.2 million ton of edible food is thrown away</p>
-				</div>
-			</div>
-		</div>
-	</section>
+            <div class="container">
+                <div class="text-wrap">
+                    <div class="text-inner">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h1 class="to-animate" style="font-family: 'raleway';">
+                                    Valley Park MS Garbage Audit
+                                </h1>
 
-	<section id="fh5co-testimonials" data-section="testimonials">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Facts</h2>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<h3>Did you know that. . .</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="to-animate">
-					<p> 
-1. Recycling one aluminum roll can save enough energy to run a TV for three hours — or the equivalent of a half a gallon of gasoline.
-<br /><br />
-2. Motor oil never wears out, it just gets dirty. Old oil can be recycled  and used again.
-<br /><br />
-3. It takes 80-100 years for an aluminum can to decompose in a landfill.
-<br />	<br />									
-4. Americans make more than 200 million tons of garbage each year, enough to fill Bush Stadium from top to bottom twice a day!
-<br /><br />
-5. About 50% of the recycling is found in the garbage can and about 40% of the garbage is found in recycling cans.
-<br /><br />
-6. 38 million miles of ribbon are put into landfills each year. That is enough to tie a bow around the earth
-<br /><br />
-7. During the time between Thanksgiving and New Year’s Day, an extra million tons of waste is generated--per week.
-<br /><br />
-8. Each ton of paper recycled can save three cubic yards of landfill space
-<br /><br />
-9. An average human throws away around 1,200 pounds of waste each year that could be composted and kept out of the landfill.
-<br /><br />
-10. When Ireland enacted a 15 cent per bag charge, consumers consumed 90 percent fewer bags.
-<br /><br />
-11. Reports show that Americans generate between 250 and 400 million tons of garbage each year--all of which requires landfill space.
-<br /><br />
-12. Americans make up roughly 5% of the world’s population, but generate nearly 40% of the world’s total waste.
-<br /><br />
-13. If every garbage truck we filled (annually) was placed end-to-end, it would cover half the distance to the moon or ~119,450 miles.
-<br /><br />
-14. In a lifetime, the average human will leave a legacy of 90,000 pounds of trash for future generations.
-<br /><br />
-15. Globally, enough hazardous waste is generated each year to fill the New Orleans Superdome more than 1,500 times over.
-<br /><br />
-16. The only relatively “clean” place on Earth is Antarctica. It is protected by the Antarctic Treaty, which prohibits military activities, mineral mining, nuclear explosions and nuclear waste disposal.
-<br /><br />
-17. Americans throw out roughly 270 million tires annually.
-<br /><br />
-18. Packaging represents about 65% of household trash.
-<br /><br />
-19. Americans throw away 5.7 million tons of carpet every year.
-<br /><br />
-20. Americans throw out roughly 43,000 tons of food daily.
-<br /><br />
-21. In Europe, Africa, and Latin America the food currently wasted could feed nearly 900 million people.
-<br /><br />
-22. Annually, Americans throw out old phones containing over $60 million in gold and/or silver.
-<br /><br />
-23. Recycling one million laptops saves the energy equivalent of powering 3,657 homes.
-<br /><br />
-24. In the United States alone, over 140 million cell phones are thrown into landfills every year.
-<br /><br />
-25. Annually the United States discards roughly 1.6 billion pens and 2 billion razor blades.
-							</p>
-				</div>
-			</div>
-		</div>
-	</section>
+                                <h2 class="to-animate">
+                                    Programmed & Designed by <b>Yasser's Group</b>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="slant">
+            </div>
+        </section>
 
-	<section id="fh5co-services" data-section="services">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-left">
-					<h2 class=" left-border to-animate">Tips</h2>
-					<div class="row">
-						<div class="col-md-8 subtext to-animate">
-							<h3>Tips To Help Better The Enviorment</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
-					<h3></h3>
-					<p>If your at a park or outside keep your garbage with yourself until you find a correct garbage disposal bin</p>
-				</div>
-				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
-					<h3></h3>
-					<p>Use reuseable watterbottles use less disopseable plates and cups</p>
-				</div>
+        <section id="fh5co-intro">
+            <div class="container">
+                <div class="row row-bottom-padded-lg">
+                    <div class="fh5co-block to-animate" style="background-image: url('');">
+                        <div class="overlay-darker">
+                        </div>
 
-				<div class="clearfix visible-sm-block"></div>
+                        <div class="overlay">
+                        </div>
 
-				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
-					<p>Reduce the amount of plastic you use</p>
-					<p>Dispose your packageing waste correctly</p>
-				</div>
-				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
-					<h3>If you can't recycle then reuse</h3>
-					<p>Skip buying plastic garbage bags and simply put your trash into the can itself. This will require you to wash the can from time to time, but if you are composting well, it won’t get too messy.</p>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	
-	<section id="fh5co-about" data-section="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">
-						Conclusion
-					</h2>
-				</div>
-			</div>
+                        <div class="fh5co-text">
+                            <i class="fh5co-intro-icon icon-bulb"></i>
+                            <h2>
+                                Plan
+                            </h2>
 
-				<p class="to-animate">
-					In denouement, we need to actually take action about disposing our waste incorrectly, because it will eventually affect all of us. So take the time to make an adjustment to your daily routines, little or great, it all matters and we will all benefit. Think about it, if you make this slight adjustment, is it gonna harm you? Is it a loss? No, it’s just a little more effort, so stop procrastinating and act now to live an improved lifestyle and better future.
-				</p>
-		
-		</div>
-	</section>
-	
-	<section id="fh5co-counters" style="background-image: url("https://darrenkearney.me/wp-content/uploads/2014/11/dumptruck.png");" data-stellar-background-ratio="0.5">
-		<div class="fh5co-overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center to-animate">
-					<h2>Credits</h2>
-				</div>
-			</div>
-			<div class="row">
-					<div class="fh5co-counter to-animate">
-						<p style="font-size: 25px;"><b>Project Leader:</b> Yasser Noori</p>
-						<p style="font-size: 25px;"><b>Info & Research:</b> Mohid Sohail, Raiyan Kamran, & Yasser Noori</p>
-						<p style="font-size: 25px;"><b>Programming:</b> Yasser Noori</p>
-						<p style="font-size: 25px;"><b>Web Design:</b> Yasser Noori</p>
-						<p style="font-size: 25px;"><b>Content:</b> Raiyan Kamran & Yasser Noori</p>
-					</div>
-			</div>
-		</div>
-	</section>
+                            <p>
+                                Our plan is to spread awareness about misplacing garbage, to create solutions for this issue, so that both you and I can live in a safer, healthier abode.
+                            </p>
+                        </div>
+                    </div>
 
-	<section id="fh5co-contact" data-section="contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Get In Touch</h2>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<h3>Have any questions?</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-6 to-animate">
-					<h3>Contact Info</h3>
-					<ul class="fh5co-contact-info">
-						<li class="fh5co-contact-address ">
-							<i class="icon-home"></i>
-							Toronto, ON <br> Flemingdon Park Drive/Thorncliffe Park Drive
-						</li>
-						<li><i class="icon-phone"></i> --</li>
-						<li><i class="icon-envelope"></i>yass3rnoori@gmail.com</li>
-						<li><i class="icon-globe"></i> <a href="http://yassernoori.github.io/" target="_blank">yassernoori.github.io</a></li>
-					</ul>
-				</div>
-			
-			<form class="col-md-6 to-animate" action="https://formspree.io/yasser.noori@student.tdsb.on.ca" method="POST">
-				<h3>Contact Form</h3>
+                    <div class="fh5co-block to-animate" style="background-image: url(images/img_8.jpg);">
+                        <div class="overlay-darker">
+                        </div>
 
-					<div class="form-group ">
-						<label for="email" class="sr-only">Email</label>
-						<input id="email" class="form-control" placeholder="Email" type="text" name="_replyto">
-					</div>
-				
-					<div class="form-group ">
-						<label for="message" class="sr-only">Message</label>
-						<textarea name="text" id="message" cols="30" rows="5" class="form-control" placeholder="Message" type="message"></textarea>
-					</div>
-						
-					<div class="form-group ">
-						<input class="btn btn-primary btn-lg" type="submit" value="Send">
-					</div>
+                        <div class="overlay">
+                        </div>
 
-			</form>
+                        <div class="fh5co-text">
+                            <i class="fh5co-intro-icon icon-wrench"></i>
+                            <h2>
+                                Action
+                            </h2>
 
-			</div>
-		</div>
-		<div id="map" class="to-animate"></div>
-	</section>
-	
-	
-	<footer id="footer" role="contentinfo">
-		<a href="#" class="gotop js-gotop"><i class="icon-arrow-up2"></i></a>
-		<div class="container">
-			<div class="">
-				<div class="col-md-12 text-center">
-					<p>&copy; Yasser Noori, All Rights Reserved.</p>
-					
-				</div>
-			</div>
-		</div>
-	</footer>
-	
-	
+                            <p>
+                                We always do our best to become an eco-friendly school, so we created this to keep track of our schools garbage to maintain a healthier enviorment.
+                            </p>
+                        </div>
+                    </div>
 
-	<!-- End demo purposes only -->
+                    <div class="fh5co-block to-animate" style="background-image: url(images/img_10.jpg);">
+                        <div class="overlay-darker">
+                        </div>
 
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Counter -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
+                        <div class="overlay">
+                        </div>
 
+                        <div class="fh5co-text">
+                            <i class="fh5co-intro-icon icon-rocket"></i>
+                            <h2>
+                                Goals
+                            </h2>
 
-	<!-- Main JS (Do not remove) -->
-	<script src="js/main.js"></script>
+                            <p>
+                                The reason for the VPMS Garbage Audit is so we can track our garbage to keep our hygene flawless, inorder to reach our goal of becoming the best eco-friendly school.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-	</body>
+                <div class="row watch-video text-center to-animate">
+                    <span>Watch the video</span> <a class="popup-vimeo btn-video" href="https://www.youtube.com/watch?v=n4SmwBFbhEM"><i class="icon-play2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section data-section="work" id="fh5co-work">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading text-center">
+                        <h2 class="to-animate">
+                            Findings
+                        </h2>
+
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 subtext to-animate">
+                                <h3>
+                                    Our class arranged a garbage audit and this what we discovered:
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="to-animate">
+                        <p>
+                            86% of food waste is not garbage and 14% is recyclable containers and from our results the average student creates 67LB of waste each year Don't buy anything that comes in wasteful single-serving packages, like candy, gum, granola bars, popsicles, etc. Skip buying plastic garbage bags and simply put your trash into the can itself. This will require you to wash the can from time to time, but if you are composting well, it won't get too messy. The average American throws away more than 7 pounds of garbage a day. North america waste 4.5 million tons of paper each year.In the US, Americans toss 60 million water bottles daily, which is nearly 700 each minute, either in the ocean or in the garbage where they don't belong. Have you ever been to a cruise or a buffet ? did you know 7.2 million ton of edible food is thrown away
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-section="testimonials" id="fh5co-testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading text-center">
+                        <h2 class="to-animate">
+                            Facts
+                        </h2>
+
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 subtext to-animate">
+                                <h3>
+                                    Did you know that. . .
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="to-animate">
+                        <p>
+                            1. Recycling one aluminum roll can save enough energy to run a TV for three hours - or the equivalent of a half a gallon of gasoline.<br>
+                            <br>
+                            2. Motor oil never wears out, it just gets dirty. Old oil can be recycled and used again.<br>
+                            <br>
+                            3. It takes 80-100 years for an aluminum can to decompose in a landfill.<br>
+                            <br>
+                            4. Americans make more than 200 million tons of garbage each year, enough to fill Bush Stadium from top to bottom twice a day!<br>
+                            <br>
+                            5. About 50% of the recycling is found in the garbage can and about 40% of the garbage is found in recycling cans.<br>
+                            <br>
+                            6. 38 million miles of ribbon are put into landfills each year. That is enough to tie a bow around the earth<br>
+                            <br>
+                            7. During the time between Thanksgiving and New Year's Day, an extra million tons of waste is generated--per week.<br>
+                            <br>
+                            8. Each ton of paper recycled can save three cubic yards of landfill space<br>
+                            <br>
+                            9. An average human throws away around 1,200 pounds of waste each year that could be composted and kept out of the landfill.<br>
+                            <br>
+                            10. When Ireland enacted a 15 cent per bag charge, consumers consumed 90 percent fewer bags.<br>
+                            <br>
+                            11. Reports show that Americans generate between 250 and 400 million tons of garbage each year--all of which requires landfill space.<br>
+                            <br>
+                            12. Americans make up roughly 5% of the world's population, but generate nearly 40% of the world's total waste.<br>
+                            <br>
+                            13. If every garbage truck we filled (annually) was placed end-to-end, it would cover half the distance to the moon or ~119,450 miles.<br>
+                            <br>
+                            14. In a lifetime, the average human will leave a legacy of 90,000 pounds of trash for future generations.<br>
+                            <br>
+                            15. Globally, enough hazardous waste is generated each year to fill the New Orleans Superdome more than 1,500 times over.<br>
+                            <br>
+                            16. The only relatively "clean" place on Earth is Antarctica. It is protected by the Antarctic Treaty, which prohibits military activities, mineral mining, nuclear explosions and nuclear waste disposal.<br>
+                            <br>
+                            17. Americans throw out roughly 270 million tires annually.<br>
+                            <br>
+                            18. Packaging represents about 65% of household trash.<br>
+                            <br>
+                            19. Americans throw away 5.7 million tons of carpet every year.<br>
+                            <br>
+                            20. Americans throw out roughly 43,000 tons of food daily.<br>
+                            <br>
+                            21. In Europe, Africa, and Latin America the food currently wasted could feed nearly 900 million people.<br>
+                            <br>
+                            22. Annually, Americans throw out old phones containing over $60 million in gold and/or silver.<br>
+                            <br>
+                            23. Recycling one million laptops saves the energy equivalent of powering 3,657 homes.<br>
+                            <br>
+                            24. In the United States alone, over 140 million cell phones are thrown into landfills every year.<br>
+                            <br>
+                            25. Annually the United States discards roughly 1.6 billion pens and 2 billion razor blades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-section="services" id="fh5co-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading text-left">
+                        <h2 class=" left-border to-animate">
+                            Tips
+                        </h2>
+
+                        <div class="row">
+                            <div class="col-md-8 subtext to-animate">
+                                <h3>
+                                    Tips To Help Better The Enviorment
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 fh5co-service to-animate">
+                        <h3>
+                        </h3>
+
+                        <p>
+                            If your at a park or outside keep your garbage with yourself until you find a correct garbage disposal bin
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 fh5co-service to-animate">
+                        <h3>
+                        </h3>
+
+                        <p>
+                            Use reuseable watterbottles use less disopseable plates and cups
+                        </p>
+                    </div>
+
+                    <div class="clearfix visible-sm-block">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 fh5co-service to-animate">
+                        <p>
+                            Reduce the amount of plastic you use
+                        </p>
+
+                        <p>
+                            Dispose your packageing waste correctly
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 fh5co-service to-animate">
+                        <h3>
+                            If you can't recycle then reuse
+                        </h3>
+
+                        <p>
+                            Skip buying plastic garbage bags and simply put your trash into the can itself. This will require you to wash the can from time to time, but if you are composting well, it won't get too messy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-section="about" id="fh5co-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading text-center">
+                        <h2 class="to-animate">
+                            Conclusion
+                        </h2>
+                    </div>
+                </div>
+
+                <p class="to-animate">
+                    In denouement, we need to actually take action about disposing our waste incorrectly, because it will eventually affect all of us. So take the time to make an adjustment to your daily routines, little or great, it all matters and we will all benefit. Think about it, if you make this slight adjustment, is it gonna harm you? Is it a loss? No, it's just a little more effort, so stop procrastinating and act now to live an improved lifestyle and better future.<br>
+                    <br>
+                    <a href="essay.html" style="font-size:40px"><b>Garbage Disposal Essay</b></a>
+                </p>
+            </div>
+        </section>
+
+        <section data-stellar-background-ratio="0.5" id="fh5co-counters" style="background-image: url(">
+            <div class="fh5co-overlay">
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading text-center to-animate">
+                        <h2>
+                            Credits
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="fh5co-counter to-animate">
+                        <p style="font-size: 25px;">
+                            <b>Project Leader:</b> Yasser Noori
+                        </p>
+
+                        <p style="font-size: 25px;">
+                            <b>Info & Research:</b> Mohid Sohail, Raiyan Kamran, & Yasser Noori
+                        </p>
+
+                        <p style="font-size: 25px;">
+                            <b>Programming:</b> Yasser Noori
+                        </p>
+
+                        <p style="font-size: 25px;">
+                            <b>Web Design:</b> Yasser Noori
+                        </p>
+
+                        <p style="font-size: 25px;">
+                            <b>Content:</b> Raiyan Kamran & Yasser Noori
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-section="contact" id="fh5co-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading text-center">
+                        <h2 class="to-animate">
+                            Get In Touch
+                        </h2>
+
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 subtext to-animate">
+                                <h3>
+                                    Have any questions?
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-6 to-animate">
+                        <h3>
+                            Contact Info
+                        </h3>
+
+                        <ul class="fh5co-contact-info">
+                            <li class="fh5co-contact-address">
+                                <i class="icon-home"></i> Toronto, ON<br>
+                                Flemingdon Park Drive/Thorncliffe Park Drive
+                            </li>
+
+                            <li>
+                                <i class="icon-phone"></i> --
+                            </li>
+
+                            <li>
+                                <i class="icon-envelope"></i>yass3rnoori@gmail.com
+                            </li>
+
+                            <li>
+                                <i class="icon-globe"></i> <a href="http://yassernoori.github.io/" target="_blank">yassernoori.github.io</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form action="https://formspree.io/yasser.noori@student.tdsb.on.ca" class="col-md-6 to-animate" method="post">
+                        <h3>
+                            Contact Form
+                        </h3>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="email">Email</label> <input class="form-control" id="email" name="_replyto" placeholder="Email" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="message">Message</label> 
+
+                            <textarea class="form-control" cols="30" id="message" name="text" placeholder="Message" rows="5" type="message"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="btn btn-primary btn-lg" type="submit" value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="to-animate" id="map">
+            </div>
+        </section>
+
+        <footer id="footer" role="contentinfo">
+            <a class="gotop js-gotop" href="#"><i class="icon-arrow-up2"></i></a>
+            <div class="container">
+                <div class="">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            &copy; Yasser Noori, All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End demo purposes only -->
+        <!-- jQuery -->
+        <script src="js/jquery.min.js">
+        </script> <!-- jQuery Easing -->
+         
+        <script src="js/jquery.easing.1.3.js">
+        </script> <!-- Bootstrap -->
+         
+        <script src="js/bootstrap.min.js">
+        </script> <!-- Waypoints -->
+         
+        <script src="js/jquery.waypoints.min.js">
+        </script> <!-- Stellar Parallax -->
+         
+        <script src="js/jquery.stellar.min.js">
+        </script> <!-- Counter -->
+         
+        <script src="js/jquery.countTo.js">
+        </script> <!-- Magnific Popup -->
+         
+        <script src="js/jquery.magnific-popup.min.js">
+        </script> 
+        <script src="js/magnific-popup-options.js">
+        </script> <!-- Google Map -->
+         
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false">
+        </script> 
+        <script src="js/google_map.js">
+        </script> <!-- Main JS (Do not remove) -->
+         
+        <script src="js/main.js">
+        </script>
+    </body>
 </html>
